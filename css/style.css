@@ -1,0 +1,154 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
+.container{
+  margin-top: 2vh;
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  position: relative;
+}
+.left {
+  background-color: white;
+  overflow: auto;
+}
+.sx {
+  background-color: #eaeaea;
+  width: 100%;
+}
+.right {
+  position: relative;
+}
+
+#utente {
+  height: 70px;
+  width: 70px;
+  border: 1px solid 0.1;
+  border-radius: 50px;
+  margin-left: 20px;
+}
+
+.header-left {
+  display: inline-block;
+  margin: 8px;
+}
+.header-left-center {
+  display: inline-block;
+  margin-top: 20px;
+}
+.header-left-dx {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 35px;
+}
+.header-left-dx > i {
+  margin-right: 15px;
+  color: gray;
+  opacity: 0.7;
+  font-size: 20px;
+}
+.img-list > h5 {
+  margin-left: 10px;
+  margin-top: 20px;
+}
+.notific {
+  background-color: #8edafc;
+  display: inline-block;
+  width: 100%;
+}
+
+.text-notific {
+  margin-left: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: inline-block;
+}
+a {
+  color: black;
+  text-decoration: underline;
+}
+.notific > i {
+  color: #8edafc;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 90px;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-top: 15px;
+  padding: 10px;
+}
+.search-chat {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+#button-addon1 {
+  border: none;
+}
+
+#lista-utenti {
+  width: 60px;
+  border: 1px solid 0.1;
+  border-radius: 50px;
+}
+
+.chat-left {
+  display: inline-block;
+  width: 100%;
+  overflow: auto;
+}
+.chat-left > h5 {
+  margin-left: 10px;
+}
+
+#img-mess{
+height: 70px;
+width: 70px;
+border: 1px solid 0.1;
+border-radius: 50px;
+margin-left: 5px;
+margin-top: 10px;
+}
+.top-message {
+  background-color: #eaeaea;
+  width: 100%;
+  height: 85px;
+  display: inline-block;
+}
+.top-message > h5 {
+  margin-left: 10px;
+  margin-top: 30px;
+  margin-right: 350px;
+}
+
+.icon-message > i {
+  margin-left: 10px;
+  color: gray;
+  opacity: 0.7;
+  margin-top: 30px;
+  margin-right: 15px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.chat {
+  background-image: url('../img/mine.jpg');
+  height: 80%;
+  width: 100%;
+}
+
+.btn-outline-secondary {
+  background-color: lightgray;
+  border: none;
+}
+.message {
+  border: 6px solid lightgray;
+}
+.input-group > input {
+  height: 60px;
+}
