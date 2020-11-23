@@ -52,5 +52,6 @@ const contacts = [
 const app = new Vue ({
   el: '#root',
   data: {
+    activeContact: 0,
 },
 });

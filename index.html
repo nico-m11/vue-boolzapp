@@ -44,11 +44,11 @@
 							</div>
 							</div>
 							<div class="chat-left align-items-center">
-								<ul v-for='n in contacts.length' v-bind:class="{'active':('currentContact == n-1')}" class="list-group list-group-flush">
+								<ul v-for='n in contacts.length' class="list-group list-group-flush">
 
-										<li @click="currentContact = n-1" class="list-group-item">
+										<li class="list-group-item">
 												<div class="img-list d-inline-flex">
-													<img :scr="contacts[n-1].avatar" alt="">
+													<img id="img-mess" :src="contacts[n-1].avatar" alt="">
 													<h6>{{ contacts[n-1].nome }}</h6>
 												</div>
 									</li>
@@ -58,7 +58,7 @@
 					<div class="right col-xs-8 col-sm-8 col-lg-8 col-xl-8 align-items-center">
 						<div class="top-message d-flex justify-content-between align-items-center">
 							<img id="img-mess"  alt="">
-								<h5>{{  }}</h5>
+								<h5>{{ }}</h5>
 								<p>{{  }}</p>
 							<div class="icon-message align-items-center">
 								<i class="fas fa-1x fa-search"></i>
