@@ -44,12 +44,15 @@
 							</div>
 							</div>
 							<div class="chat-left align-items-center">
-								<ul v-for='n in contacts.length' class="list-group list-group-flush">
+								<ul  class="list-group list-group-flush">
 
-										<li class="list-group-item">
+										<li :class="index === activeContact ? 'active' : '' "
+										 v-for='(contact, index) in contacts'
+										 class="list-group-item"
+										 @click='setActiveContact(index)'>
 												<div class="img-list d-inline-flex">
-													<img id="img-mess" :src="contacts[n-1].avatar" alt="">
-													<h6>{{ contacts[n-1].nome }}</h6>
+													<img id="img-mess" :src="contact.avatar" alt="">
+													<h6>{{ contact.nome }}</h6>
 												</div>
 									</li>
 								</ul>
@@ -57,17 +60,20 @@
 					</div>
 					<div class="right col-xs-8 col-sm-8 col-lg-8 col-xl-8 align-items-center">
 						<div class="top-message d-flex justify-content-between align-items-center">
-							<img id="img-mess"  alt="">
-								<h5>{{ }}</h5>
-								<p>{{  }}</p>
+							<img id="img-mess" :src='contacts[activeContact].avatar' alt="">
+								<h5>{{ contacts[activeContact].nome }}</h5>
+								<p>{{ contacts[activeContact].date }}</p>
 							<div class="icon-message align-items-center">
 								<i class="fas fa-1x fa-search"></i>
 								<i class="fas fa-1x fa-paperclip"></i>
 								<i class="fas fa-1x fa-ellipsis-v"></i>
 							</div>
 						</div>
-						<div class="chat">
-
+						<div class="chat d-flex">
+						<div v-for="message in contacts[activeContact].message" v-bind="message" class="messaggi">
+							<p>{{ message.textMessage }}</p>
+							<span id="data">{{ message.date }}</span>
+						</div>
 						</div>
 						<div class="input-text align-items-center">
 							<div class="input-group new">
