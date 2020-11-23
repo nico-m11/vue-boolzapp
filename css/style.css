@@ -15,14 +15,17 @@ body {
 }
 .left {
   background-color: white;
-  overflow: auto;
+  overflow-y: auto;
+  flex: 0 1 100%;
 }
 .sx {
   background-color: #eaeaea;
   width: 100%;
+  flex: 0 1 100%;
 }
 .right {
   position: relative;
+  flex: 1 1 100%;
 }
 
 #utente {
@@ -36,21 +39,24 @@ body {
 .header-left {
   display: inline-block;
   margin: 8px;
+  flex: 0 1 100%;
 }
 .header-left-center {
   display: inline-block;
   margin-top: 20px;
+  flex: 0 1 100%;
 }
 .header-left-dx {
   display: inline-block;
-  margin-top: 30px;
   margin-left: 35px;
+  flex: 0 1 100%;
 }
 .header-left-dx > i {
   margin-right: 15px;
   color: gray;
   opacity: 0.7;
   font-size: 20px;
+  flex: 0 1 100%;
 }
 .img-list > h5 {
   margin-left: 10px;
@@ -60,6 +66,7 @@ body {
   background-color: #8edafc;
   display: inline-block;
   width: 100%;
+  flex: 0 1 100%;
 }
 
 .text-notific {
@@ -67,6 +74,7 @@ body {
   margin-top: 25px;
   margin-bottom: 15px;
   display: inline-block;
+  flex: 0 1 100%;
 }
 a {
   color: black;
@@ -86,6 +94,7 @@ a {
   margin-top: 5px;
   margin-right: 5px;
   margin-left: 5px;
+  flex: 0 1 100%;
 }
 #button-addon1 {
   border: none;
@@ -101,6 +110,7 @@ a {
   display: inline-block;
   width: 100%;
   overflow: auto;
+  flex: 0 1 100%;
 }
 .chat-left > h5 {
   margin-left: 10px;
@@ -119,27 +129,28 @@ margin-top: 10px;
   width: 100%;
   height: 85px;
   display: inline-block;
+  flex: 1 1 100%;
 }
 .top-message > h5 {
   margin-left: 10px;
-  margin-top: 30px;
   margin-right: 350px;
 }
-
+.icon-message{
+  display: inline-flex;
+  flex: 1 1 100%;
+}
 .icon-message > i {
-  margin-left: 10px;
   color: gray;
   opacity: 0.7;
-  margin-top: 30px;
-  margin-right: 15px;
-  display: inline-block;
   font-size: 20px;
+  flex: 1 1 100%;
 }
 
 .chat {
   background-image: url('../img/mine.jpg');
   height: 80%;
   width: 100%;
+  flex: 1 1 100%;
 }
 
 .btn-outline-secondary {
@@ -148,7 +159,8 @@ margin-top: 10px;
 }
 .message {
   border: 6px solid lightgray;
+  flex: 1 1 100%;
 }
-.input-group > input {
+.new > input {
   height: 60px;
 }

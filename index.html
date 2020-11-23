@@ -17,7 +17,7 @@
 		<div id="root">
 			<div class="container">
 				<div class="row no-gutters">
-					<div class="left col-xs-4 col-sm-4 col-lg-4 col-xl-4">
+					<div class="left col-xs-4 col-sm-4 col-lg-4 col-xl-4 align-items-center">
 						<div class="sx d-inline-flex">
 							<div class="header-left">
 								<img id="utente" src="img/avatar_2.jpg" alt="">
@@ -25,52 +25,42 @@
 								<div class="header-left-center">
 									<h5>Nicola Melito</h5>
 								</div>
-							<div class="header-left-dx d-inline-flex">
+							<div class="header-left-dx d-inline-flex align-items-center">
 								<i class="fas fa-1x fa-circle-notch"></i>
 								<i class="fas fa-1x fa-comment-alt"></i>
 								<i class="fas fa-1x fa-ellipsis-v"></i>
 							</div>
 						</div>
-							<div class="notific d-inline-flex">
+							<div class="notific d-inline-flex align-items-center">
 								<i class="fas fa-2x fa-bell-slash"></i>
 								<div class="text-notific">
 									<h6>Ricevi Notifiche di nuovi messaggi</h6>
 									<a href="#">Attiva notifiche desktop</a>
 								</div>
 							</div>
-							<div class="search-chat">
+							<div class="search-chat align-items-center">
 								<div class="input-group mb-3">
 	  							<input type="text" class="form-control" placeholder=" Cerca nelle Chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
 							</div>
 							</div>
-							<div class="chat-left">
-								<ul class="list-group list-group-flush">
-  								<li class="list-group-item">
-										<div class="img-list d-inline-flex">
-											<img id="lista-utenti" src="img/avatar_io.jpg" alt="">
-											<h5>Mery</h5>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="img-list d-inline-flex">
-											<img id="lista-utenti" src="img/avatar_8.jpg" alt="">
-											<h5>Ernesto</h5>
-										</div>
-									</li>
-									<li class="list-group-item">
-										<div class="img-list d-inline-flex">
-											<img id="lista-utenti" src="img/avatar_6.jpg" alt="">
-											<h5>Luisa</h5>
-										</div>
+							<div class="chat-left align-items-center">
+								<ul v-for='n in contacts.length' v-bind:class="{'active':('currentContact == n-1')}" class="list-group list-group-flush">
+
+										<li @click="currentContact = n-1" class="list-group-item">
+												<div class="img-list d-inline-flex">
+													<img :scr="contacts[n-1].avatar" alt="">
+													<h6>{{ contacts[n-1].nome }}</h6>
+												</div>
 									</li>
 								</ul>
 							</div>
 					</div>
-					<div class="right col-xs-8 col-sm-8 col-lg-8 col-xl-8">
-						<div class="top-message d-flex justify-content-between">
-							<img id="img-mess" src="img/avatar_io.jpg" alt="">
-								<h5>Mery Mallardo</h5>
-							<div class="icon-message">
+					<div class="right col-xs-8 col-sm-8 col-lg-8 col-xl-8 align-items-center">
+						<div class="top-message d-flex justify-content-between align-items-center">
+							<img id="img-mess"  alt="">
+								<h5>{{  }}</h5>
+								<p>{{  }}</p>
+							<div class="icon-message align-items-center">
 								<i class="fas fa-1x fa-search"></i>
 								<i class="fas fa-1x fa-paperclip"></i>
 								<i class="fas fa-1x fa-ellipsis-v"></i>
@@ -79,8 +69,8 @@
 						<div class="chat">
 
 						</div>
-						<div class="input-text">
-							<div class="input-group">
+						<div class="input-text align-items-center">
+							<div class="input-group new">
 								<button class="btn btn-outline-secondary" type="button"><i class="fas fa-smile"></i></button>
   							<input type="text" class="form-control message" placeholder="Inserisci testo del messaggio" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
   							<div class="input-group-append" id="button-addon4">
