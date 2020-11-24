@@ -3,7 +3,6 @@ body {
   width: 100vw;
   background: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbd1 15vh, #d2dbdc 100%);
   background-repeat: no-repeat;
-  overflow: auto;
 }
 
 .container{
@@ -18,6 +17,7 @@ body {
   overflow-y: auto;
   flex: 0 1 100%;
   height: 100%;
+  width: 100%;
 }
 .sx {
   background-color: #eaeaea;
@@ -28,6 +28,7 @@ body {
   position: relative;
   flex: 1 1 100%;
   height: 100%;
+  width: 100%;
 }
 
 #utente {
@@ -160,26 +161,29 @@ margin-top: 10px;
   background-color: lightgray;
   border: none;
 }
-.message {
-  border: 6px solid lightgray;
-  flex: 1 1 100%;
-}
+
 .new > input {
   height: 60px;
 }
 
-.messaggi {
-  margin-top: 0;
-  height: 25px;
-  background-color: lightgreen;
-  height: 15%;
-  margin: 20px;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 10px;
+#data {
+  margin-top: 20px;
+  font-size: 12px;
+  float: right;
 }
 
-#data {
-  float: right;
-  font-size: 12px;
+.messaggi {
+  background-color: #ffffff;
+  width: 50%;
+  margin-top: 10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.utente-mess {
+margin-left: 50%;
+margin-top: 10px;
+margin-right: 10px;
+background-color: #d5f9ba;
 }
