@@ -128,18 +128,20 @@ margin-top: 10px;
   background-color: #eaeaea;
   width: 100%;
   height: 85px;
-  display: inline-block;
   flex: 1 1 100%;
 }
+
 .top-message > h5 {
   margin-left: 10px;
   margin-right: 350px;
   width: 90%;
+  margin-top: 25px;
 }
 .icon-message{
   display: inline;
   flex: 1 1 100%;
   margin-right: 0;
+  margin-top: 25px;
 }
 .icon-message > i {
   color: gray;

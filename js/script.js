@@ -3,8 +3,9 @@ const app = new Vue ({
   data: {
     contacts:  [
       {
-        nome: 'Genny',
+        nome: 'Genny Durante',
         avatar: 'img/avatar_4.jpg',
+        lastSeen: 'Attivo oggi alle 15:00',
         message: [
           {
             textMessage:"Ciao Genny come stai?",
@@ -19,8 +20,9 @@ const app = new Vue ({
         ]
       },
       {
-        nome: 'Mery',
+        nome: 'Mery Mallardo',
         avatar: 'img/avatar_io.jpg',
+        lastSeen: 'Attivo oggi alle 18:00',
         message: [
           {
             textMessage: 'Hey non ti fai vedere più, che fine hai fatto?',
@@ -35,8 +37,9 @@ const app = new Vue ({
         ]
       },
       {
-        nome: 'Silvio Pio',
+        nome: 'Silvio Pio Nuzzo',
         avatar: 'img/avatar_3.jpg',
+        lastSeen: 'Attivo ieri alle 15:00',
         message: [
           {
             textMessage: 'Quando ci prendiamo un Drink',
@@ -53,6 +56,7 @@ const app = new Vue ({
       {
         nome: 'Antonio Concilio',
         avatar: 'img/avatar_7.jpg',
+        lastSeen: 'Attivo oggi alle 16:00',
         message: [
           {
             textMessage: "Quando posso portare l'auto a lavare?",
@@ -89,6 +93,18 @@ const app = new Vue ({
         type: 'recived',
         date: '24/11/2020 15:05'
       })
+    }
+  },
+  searchArr: '',
+  computed: {
+    searchName () {
+      if (this.searchArr) {
+        return this.contacts.filter((item) => {
+          return this.searchArr.toLowerCase().split('').every(v => item.nome.toLowerCase().includes(v))
+        })
+      } else {
+        return this.contacts;
+      }
     }
   }
 });
