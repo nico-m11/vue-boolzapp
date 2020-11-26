@@ -71,20 +71,22 @@ const app = new Vue ({
         ]
       },
     ],
-    activeContact: 0,
+    activeContact: null,
     textInput: '',
     searchInput: '',
-    filteredContact: []
+    filteredContact: [],
+    currentContact: null,
 },
-/*  created: function () {
-  this.currentContanct = this.contacts[0];
-},*/
+  created: function () {
+  this.activeContact = this.contacts[0];
+  this.filteredContact = this.contacts;
+},
   methods: {
-    setActiveContact: function (index) {
-      this.activeContact = index;
+    setActiveContact: function (contact) {
+      this.activeContact = contact;
     },
     sent: function () {
-      this.contacts[this.activeContact].message.push({
+      this.activeContact.message.push({
         textMessage: this.textInput,
         type: 'sent',
         date: '24/11/2020 15:00'
@@ -93,16 +95,16 @@ const app = new Vue ({
       setTimeout(this.recived, 5000);
     },
     recived: function () {
-      this.contacts[this.activeContact].message.push({
+      this.activeContact.message.push({
         textMessage: 'Perfetto',
         type: 'recived',
         date: '24/11/2020 15:05'
       })
     },
     searchName: function () {
-        return this.filteredContact = this.contacts.filter((contact) => {
-         return this.contacts.nome.toLowerCase().includes(this.searchInput)
-      });
+         this.filteredContact = this.contacts.filter(
+           (contact) => contact.nome.toLowerCase().includes(this.searchInput.toLowerCase())
+        );
     },
   },
   //computed: {

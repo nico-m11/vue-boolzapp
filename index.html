@@ -40,16 +40,16 @@
 							</div>
 							<div class="search-chat align-items-center">
 								<div  class="input-group mb-3">
-	  							<input @keyup='searchName' v-model='searchInput' type="text" class="form-control" placeholder=" Cerca nelle Chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+	  							<input @keyup='searchName()' v-model='searchInput' type="text" class="form-control" placeholder=" Cerca nelle Chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
 							</div>
 							</div>
 							<div class="chat-left align-items-center">
 								<ul  class="list-group list-group-flush">
 
-										<li :class="{'my_hidden': filteredContact.length > 0}"
+										<li :class=""
 											v-for="contact in filteredContact"
 										 class="list-group-item"
-										 @click='setActiveContact(index)'>
+										 @click='setActiveContact(contact)'>
 												<div class="img-list d-inline-flex">
 													<img id="img-mess" :src="contact.avatar" alt="">
 													<h6 id="nome-lista">{{ contact.nome }}</h6>
@@ -58,12 +58,12 @@
 									</li>
 								</ul>
 							</div>
-							<div class="chat-left align-items-center">
+					<!--		<div class="chat-left align-items-center">
 								<ul  class="list-group list-group-flush">
 
 										<li :class="index === activeContact ? 'active' : '' "
 										:class="{'my_hidden': filteredContact.length == 0}"
-										 v-for="(contact, index) in contacts"
+										 v-for="(contact, index) in filtere"
 										 class="list-group-item"
 										 @click='setActiveContact(index)'>
 												<div class="img-list d-inline-flex">
@@ -73,12 +73,12 @@
 												</div>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 					</div>
 					<div class="right col-xs-8 col-sm-8 col-lg-8 col-xl-8 ">
 						<div class="top-message d-flex">
-							<img id="img-mess" :src='contacts[activeContact].avatar' alt="">
-								<h5>{{ contacts[activeContact].nome }}</h5>
+							<img id="img-mess" :src='activeContact.avatar' alt="">
+								<h5>{{ activeContact.nome }}</h5>
 							<div class="icon-message align-items-center">
 								<i class="fas fa-1x fa-search"></i>
 								<i class="fas fa-1x fa-paperclip"></i>
@@ -86,7 +86,7 @@
 							</div>
 						</div>
 						<div class="chat d-flex flex-column">
-						<div v-for="message in contacts[activeContact].message" v-bind:class="{'utente-mess' : message.type === 'sent'}" class="messaggi d-flex">
+						<div v-for="message in activeContact.message" v-bind:class="{'utente-mess' : message.type === 'sent'}" class="messaggi d-flex">
 							<p>{{ message.textMessage }}</p>
 							<span id="data">{{ message.date }}</span>
 						</div>
