@@ -39,15 +39,31 @@
 								</div>
 							</div>
 							<div class="search-chat align-items-center">
-								<div class="input-group mb-3">
-	  							<input v-model='searchName'  type="text" class="form-control" placeholder=" Cerca nelle Chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+								<div  class="input-group mb-3">
+	  							<input @keyup='searchName' v-model='searchInput' type="text" class="form-control" placeholder=" Cerca nelle Chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
 							</div>
 							</div>
 							<div class="chat-left align-items-center">
 								<ul  class="list-group list-group-flush">
 
+										<li :class="{'my_hidden': filteredContact.length > 0}"
+											v-for="contact in filteredContact"
+										 class="list-group-item"
+										 @click='setActiveContact(index)'>
+												<div class="img-list d-inline-flex">
+													<img id="img-mess" :src="contact.avatar" alt="">
+													<h6 id="nome-lista">{{ contact.nome }}</h6>
+													<p>{{ contact.lastSeen }}</p>
+												</div>
+									</li>
+								</ul>
+							</div>
+							<div class="chat-left align-items-center">
+								<ul  class="list-group list-group-flush">
+
 										<li :class="index === activeContact ? 'active' : '' "
-										 v-for='(contact, index) in contacts'
+										:class="{'my_hidden': filteredContact.length == 0}"
+										 v-for="(contact, index) in contacts"
 										 class="list-group-item"
 										 @click='setActiveContact(index)'>
 												<div class="img-list d-inline-flex">

@@ -72,8 +72,13 @@ const app = new Vue ({
       },
     ],
     activeContact: 0,
-    textInput: ''
+    textInput: '',
+    searchInput: '',
+    filteredContact: []
 },
+/*  created: function () {
+  this.currentContanct = this.contacts[0];
+},*/
   methods: {
     setActiveContact: function (index) {
       this.activeContact = index;
@@ -93,18 +98,22 @@ const app = new Vue ({
         type: 'recived',
         date: '24/11/2020 15:05'
       })
-    }
+    },
+    searchName: function () {
+        return this.filteredContact = this.contacts.filter((contact) => {
+         return this.contacts.nome.toLowerCase().includes(this.searchInput)
+      });
+    },
   },
-  searchArr: '',
-  computed: {
-    searchName () {
-      if (this.searchArr) {
-        return this.contacts.filter((item) => {
-          return this.searchArr.toLowerCase().split('').every(v => item.nome.toLowerCase().includes(v))
-        })
-      } else {
-        return this.contacts;
-      }
+  //computed: {
+  /*searchName: function () {
+    if (this.searchInput.length > 0) {
+      return this.contacts.filter((element) => {
+        return element.nome.toLowerCase().includes(this.searchInput.toLowerCase());
+      })
+    } else {
+      return this.contacts;
     }
-  }
+  }*/
+  //},
 });
